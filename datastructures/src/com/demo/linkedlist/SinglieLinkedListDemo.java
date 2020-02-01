@@ -31,13 +31,52 @@ public class SinglieLinkedListDemo {
 
         /*linkedList.delNode(hero3);
         System.out.println("删除后");*/
-        System.out.println("修改后~~~~~");
+        /*System.out.println("修改后~~~~~");
         linkedList.update(new HeroNode(3,"吴用","天机星"));
-        linkedList.list();
+        linkedList.list();*/
         //
+        HeroNode node = findNode(linkedList,2);
+        System.out.println("倒数第2个节点："+node);
 
 
     }
+
+    /**
+     * 查找倒数第k个节点：
+     * 思路：1.先判断链表是否为空，为空，则直接返回
+     *      2.遍历链表，得到链表的总节点数size
+     *      3.遍历到size-index则是
+     * @param index
+     * @return
+     */
+    public static HeroNode findNode(SingleLinkedList linkedList,int index){
+        HeroNode head = linkedList.getHead();
+        if(head.getNext()==null){
+            return null;
+        }
+        HeroNode temp = head.getNext();
+        int size = 0;
+        while(true){
+            if(temp == null ){
+                break;
+            }
+            size ++;
+            temp = temp.getNext();
+        }
+        if(index <0 || index >size){
+            return null;
+        }
+
+        temp = head.getNext();
+
+        for(int i=0;i<(size-index);i++){
+            temp = temp.getNext();
+        }
+        return temp;
+    }
+
+    public static void 
+
 }
 
 class SingleLinkedList{
@@ -181,6 +220,9 @@ class SingleLinkedList{
         }
     }
 
+    public HeroNode getHead(){
+        return this.head;
+    }
 
 }
 
