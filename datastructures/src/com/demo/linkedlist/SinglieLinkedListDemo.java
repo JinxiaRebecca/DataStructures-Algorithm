@@ -34,6 +34,8 @@ public class SinglieLinkedListDemo {
         System.out.println("修改后~~~~~");
         linkedList.update(new HeroNode(3,"吴用","天机星"));
         linkedList.list();
+        //
+
 
     }
 }
@@ -143,6 +145,22 @@ class SingleLinkedList{
         }
 
     }
+
+    //查找有效节点的个数
+    public int countsOfNodes(){
+        int counts = 0 ;
+        if(head.getNext()==null){//节点为空
+            return counts;
+        }
+        HeroNode temp = head.getNext();
+        while(temp!=null){
+            counts ++;
+          temp = temp.getNext();
+        }
+        return counts;
+    }
+
+
 
     /**
      * 遍历链表，并显示数据
