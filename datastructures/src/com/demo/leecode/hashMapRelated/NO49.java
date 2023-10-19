@@ -1,4 +1,4 @@
-package com.demo.leecode;
+package com.demo.leecode.hashMapRelated;
 
 import java.util.*;
 

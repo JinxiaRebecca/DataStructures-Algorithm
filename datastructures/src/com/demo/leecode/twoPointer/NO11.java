@@ -1,4 +1,4 @@
-package com.demo.leecode.hashMapRelated;
+package com.demo.leecode.twoPointer;
 
 /**
  * @author Rebecca Jin
